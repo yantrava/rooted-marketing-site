@@ -3,7 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Support',
   description:
-    'Get help with Rooted. Contact the team, check the FAQ, or request a full export of your data.'
+    'Get help with Rooted. Contact the team, check the FAQ, or request a full export of your data.',
+  alternates: { canonical: '/support' },
+  openGraph: { url: '/support' }
 };
 
 export default function SupportPage() {

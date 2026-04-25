@@ -3,7 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    "How Rooted collects, uses, and protects your data. DPDP (India) and GDPR (EU) compliant. You can request a full export or deletion at any time."
+    "How Rooted collects, uses, and protects your data. DPDP (India) and GDPR (EU) compliant. You can request a full export or deletion at any time.",
+  alternates: { canonical: '/privacy' },
+  openGraph: { url: '/privacy' }
 };
 
 // This is a draft written to the structure required by the Play Store

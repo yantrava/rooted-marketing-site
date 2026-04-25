@@ -3,7 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Attribution',
   description:
-    'Open-source libraries, ML models, data sources, and creative assets that power Rooted. Credit where credit is due.'
+    'Open-source libraries, ML models, data sources, and creative assets that power Rooted. Credit where credit is due.',
+  alternates: { canonical: '/attribution' },
+  openGraph: { url: '/attribution' }
 };
 
 export default function AttributionPage() {

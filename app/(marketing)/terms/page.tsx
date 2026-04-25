@@ -3,7 +3,9 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
-    "The simple terms of using Rooted. App access, subscriptions, community rules, and termination."
+    "The simple terms of using Rooted. App access, subscriptions, community rules, and termination.",
+  alternates: { canonical: '/terms' },
+  openGraph: { url: '/terms' }
 };
 
 // Initial terms draft — lawyer review required before any app store
