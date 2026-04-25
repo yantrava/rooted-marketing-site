@@ -25,15 +25,18 @@ const buildVariants = (
   const axis = direction === 'left' || direction === 'right' ? 'x' : 'y';
   const distance = direction === 'right' || direction === 'down' ? 40 : -40;
 
-  return {
-    hidden: { opacity: 0, filter: 'blur(8px)', [axis]: distance },
-    visible: {
-      opacity: 1,
-      filter: 'blur(0px)',
-      [axis]: 0,
-      transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] }
-    }
-  };
+  const hidden = {
+    opacity: 0,
+    filter: 'blur(8px)',
+    [axis]: distance
+  } as Variant;
+  const visible = {
+    opacity: 1,
+    filter: 'blur(0px)',
+    [axis]: 0,
+    transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const }
+  } as Variant;
+  return { hidden, visible };
 };
 
 interface RevealProps extends Omit<HTMLMotionProps<'div'>, 'children'> {
