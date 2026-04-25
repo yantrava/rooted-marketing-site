@@ -9,7 +9,6 @@ import {
 import { AnimatedHeading } from '@/components/ui/animated-heading';
 import { Reveal } from '@/components/ui/reveal';
 import { Section } from '@/components/ui/section';
-import Script from 'next/script';
 
 interface FAQProps {
   question: string;
@@ -75,13 +74,12 @@ const faqSchema = {
 export const FAQ = () => {
   return (
     <Section id="faq" className="py-20 sm:py-32">
-      <Script
-        id="ld-faq"
-        type="application/ld+json"
-        strategy="afterInteractive"
-      >
+      {/* JSON-LD rendered as a plain <script> so it lands in the SSR
+          HTML — afterInteractive injection happens too late for the
+          first crawl pass. */}
+      <script id="ld-faq" type="application/ld+json">
         {JSON.stringify(faqSchema)}
-      </Script>
+      </script>
       <div className="max-w-container mx-auto flex flex-col items-center gap-10 px-4">
         <div className="flex max-w-2xl flex-col items-center gap-4 text-center">
           <p className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">

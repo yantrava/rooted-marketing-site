@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { PropsWithChildren } from 'react';
 import { Fraunces, Inter } from 'next/font/google';
-import Script from 'next/script';
 import { getURL } from '@/utils/helpers';
 import '@/styles/main.css';
 import { PHProvider } from './providers';
@@ -128,20 +127,16 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       className={`${fraunces.variable} ${inter.variable}`}
     >
       <body className="font-sans antialiased">
-        <Script
-          id="ld-softwareapp"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-        >
+        {/* JSON-LD must render in the SSR HTML so non-JS crawlers (Bing,
+            social previews, AI bots) and Googlebot's first-pass indexer
+            see the schema before any client hydration. next/script
+            injects after page load, which is too late. */}
+        <script id="ld-softwareapp" type="application/ld+json">
           {JSON.stringify(softwareAppSchema)}
-        </Script>
-        <Script
-          id="ld-organization"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-        >
+        </script>
+        <script id="ld-organization" type="application/ld+json">
           {JSON.stringify(organizationSchema)}
-        </Script>
+        </script>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
