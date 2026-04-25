@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { PropsWithChildren } from 'react';
 import { Fraunces, Inter } from 'next/font/google';
 import { getURL } from '@/utils/helpers';
@@ -7,7 +8,16 @@ import { PHProvider } from './providers';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from '@/components/ui/toaster';
 import PostHogPageViewWrapper from '@/components/misc/PostHogPageViewWrapper';
-import { RootedVine } from '@/components/landing/RootedVine';
+
+// RootedVine is purely a client-side scroll animation (motion/react +
+// scrollYProgress + DOM measurements) and contributes the largest single
+// chunk to TBT. Defer it from the SSR bundle so first paint isn't blocked
+// by its hydration cost. Visual effect is unchanged — it draws as the
+// user scrolls, which only happens post-hydration anyway.
+const RootedVine = dynamic(
+  () => import('@/components/landing/RootedVine').then((m) => m.RootedVine),
+  { ssr: false }
+);
 
 // Serif display face per the "Verdant Cartography" philosophy — a
 // high-contrast serif of classical proportions that anchors the wordmark

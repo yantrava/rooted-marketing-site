@@ -63,8 +63,11 @@ export const Navbar = ({ user: _user }: NavbarProps = {}) => {
             </a>
           </NavigationMenuItem>
 
-          {/* mobile */}
-          <span className="flex md:hidden">
+          {/* mobile menu — wrapped in NavigationMenuItem so it renders
+              as <li>, satisfying the WHATWG rule that <ul> direct
+              children must all be <li>. Lighthouse's "Lists do not
+              contain only <li>" audit catches the non-<li> case. */}
+          <NavigationMenuItem className="flex md:hidden">
             <ModeToggle />
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2" asChild>
@@ -99,10 +102,10 @@ export const Navbar = ({ user: _user }: NavbarProps = {}) => {
                 </nav>
               </SheetContent>
             </Sheet>
-          </span>
+          </NavigationMenuItem>
 
-          {/* desktop */}
-          <nav className="hidden gap-2 md:flex">
+          {/* desktop nav links — also wrapped as <li> */}
+          <NavigationMenuItem className="hidden gap-2 md:flex">
             {routeList.map(({ href, label }) => (
               <a
                 rel="noreferrer noopener"
@@ -113,14 +116,14 @@ export const Navbar = ({ user: _user }: NavbarProps = {}) => {
                 {label}
               </a>
             ))}
-          </nav>
+          </NavigationMenuItem>
 
-          <div className="hidden items-center gap-2 md:flex">
+          <NavigationMenuItem className="hidden items-center gap-2 md:flex">
             <ModeToggle />
             <GradientBorderButton href="#waitlist" size="sm">
               Join the beta
             </GradientBorderButton>
-          </div>
+          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
     </header>
