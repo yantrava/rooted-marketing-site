@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { BreadcrumbJsonLd } from '@/components/landing/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Terms of Service',
@@ -14,6 +15,7 @@ export default function TermsPage() {
   const updated = 'April 20, 2026';
   return (
     <article>
+      <BreadcrumbJsonLd name="Terms of Service" path="/terms" />
       <h1>Terms of Service</h1>
       <p>
         <em>Last updated: {updated}</em>

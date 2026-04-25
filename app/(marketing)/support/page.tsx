@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { BreadcrumbJsonLd } from '@/components/landing/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Support',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function SupportPage() {
   return (
     <article>
+      <BreadcrumbJsonLd name="Support" path="/support" />
       <h1>Support</h1>
       <p>
         Need a hand? Pick the fastest path below. Replies usually land

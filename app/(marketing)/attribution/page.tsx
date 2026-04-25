@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { BreadcrumbJsonLd } from '@/components/landing/BreadcrumbJsonLd';
 
 export const metadata: Metadata = {
   title: 'Attribution',
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function AttributionPage() {
   return (
     <article>
+      <BreadcrumbJsonLd name="Attribution" path="/attribution" />
       <h1>Attribution</h1>
       <p>
         Rooted stands on a lot of shoulders. This page lists the libraries,
