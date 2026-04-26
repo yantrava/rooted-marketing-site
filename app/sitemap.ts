@@ -8,7 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/privacy', priority: 0.6, changeFreq: 'monthly' },
     { path: '/terms', priority: 0.6, changeFreq: 'monthly' },
     { path: '/support', priority: 0.7, changeFreq: 'monthly' },
-    { path: '/attribution', priority: 0.5, changeFreq: 'monthly' }
+    { path: '/attribution', priority: 0.5, changeFreq: 'monthly' },
+    { path: '/account-deletion', priority: 0.4, changeFreq: 'monthly' }
   ];
   const now = new Date();
   return routes.map(({ path, priority, changeFreq }) => ({
