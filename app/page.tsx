@@ -12,6 +12,9 @@ import { Science } from '@/components/landing/Science';
 // is identical to before (zero visual change, zero CLS, zero hydration
 // warnings); only the client-side JS for those sections is split into a
 // separate chunk that the browser can fetch after the critical render.
+const Screenshots = dynamic(() =>
+  import('@/components/landing/Screenshots').then(m => m.Screenshots)
+);
 const Pricing = dynamic(() =>
   import('@/components/landing/Pricing').then(m => m.Pricing)
 );
@@ -36,6 +39,7 @@ export default function LandingPage() {
       <HowItWorks />
       <Items />
       <Science />
+      <Screenshots />
       <Pricing />
       <FAQ />
       <Cta />
