@@ -13,7 +13,7 @@ import { StoreBadges } from './StoreBadges';
 // live yet. Pill microcopy reinforces trust without over-claiming.
 export const Hero = () => {
   return (
-    <Section className="fade-bottom relative overflow-hidden pb-0 sm:pb-0 md:pb-0">
+    <Section className="dark:fade-bottom relative overflow-hidden pb-0 sm:pb-0 md:pb-0">
       <AuroraBlobs />
       <div className="max-w-container mx-auto flex flex-col gap-12 pt-16 sm:gap-16 sm:pt-24">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-8">
