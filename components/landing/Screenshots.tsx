@@ -53,7 +53,11 @@ export function ScreenshotMarquee() {
           <li
             key={i}
             aria-hidden={shot.clone}
-            className="border-border/40 bg-card ring-primary/5 relative h-[420px] w-[194px] shrink-0 overflow-hidden rounded-3xl border shadow-xl ring-1 sm:h-[560px] sm:w-[259px]"
+            // The deck screenshots have transparent regions and were
+            // designed for a dark/green backdrop. Pin the card surface to
+            // the brand deep-phthalo in BOTH themes (not `bg-card`, which
+            // flips to cream in light mode and washes the slides out).
+            className="relative h-[420px] w-[194px] shrink-0 overflow-hidden rounded-3xl border border-white/10 bg-[oklch(20%_0.028_155)] shadow-xl ring-1 ring-black/10 sm:h-[560px] sm:w-[259px]"
           >
             <Image
               src={shot.src}
