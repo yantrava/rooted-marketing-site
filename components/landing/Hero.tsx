@@ -3,6 +3,7 @@
 import { AnimatedHeading } from '@/components/ui/animated-heading';
 import { AuroraBlobs } from '@/components/ui/aurora-blobs';
 import { Section } from '@/components/ui/section';
+import { ScreenshotMarquee } from './Screenshots';
 import { StoreBadges } from './StoreBadges';
 
 // First fold. Per ui-ux-pro-max §"Style Selection" + the Verdant
@@ -43,10 +44,10 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Product shot — a Pixel 7 frame wrapping the Rooted Home screen.
-         * Placeholder aspect box until /public/screenshots/home.png lands. */}
-        <div className="animate-appear-zoom relative mx-auto w-full max-w-3xl opacity-0 delay-500">
-          <div className="border-border/40 from-card to-secondary ring-primary/5 relative aspect-[5/4] overflow-hidden rounded-2xl border bg-gradient-to-br ring-1" />
+        {/* Product shot — the real app screens, auto-sliding. Fills the
+         * first-fold slot that previously held an empty placeholder box. */}
+        <div className="animate-appear-zoom relative mx-auto w-full max-w-5xl opacity-0 delay-500">
+          <ScreenshotMarquee />
         </div>
       </div>
     </Section>
