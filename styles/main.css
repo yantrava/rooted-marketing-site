@@ -61,6 +61,7 @@
   --animate-appear-zoom: appear-zoom 0.6s forwards ease-out;
   --animate-gradient-flow: gradient-flow 20s ease-in-out infinite;
   --animate-gradient-pulse: gradient-pulse 4s ease-in-out infinite;
+  --animate-marquee-x: marquee-x 50s linear infinite;
 
   @keyframes accordion-down {
     from {
@@ -121,6 +122,17 @@
     }
     50% {
       opacity: 0.35;
+    }
+  }
+  /* Seamless screenshot marquee. The track renders the image set twice, so
+   * translating to -50% lands on a pixel-identical frame — no visible jump
+   * at the loop seam. Used by the Screenshots carousel. */
+  @keyframes marquee-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
     }
   }
 }
@@ -225,5 +237,13 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Respect reduced-motion: freeze the marquee track and let it become a
+   * normal horizontal scroll instead of an auto-slide. */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee-x {
+      animation: none;
+      overflow-x: auto;
+    }
   }
 }
