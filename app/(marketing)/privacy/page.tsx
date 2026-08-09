@@ -33,7 +33,15 @@ export default function PrivacyPage() {
 
       <h2>1. Who we are</h2>
       <p>
-        Rooted is operated by Manav Jain. You can contact us at{' '}
+        This policy covers the <strong>Rooted</strong> mobile app and the
+        rootedplant.org website. The app is published on Google Play as{' '}
+        <strong>&ldquo;Rooted Plant Identifier &amp; Care&rdquo;</strong> by
+        the developer <strong>Rooted AS</strong> (package{' '}
+        <code>com.rooted.rooted</code>), and on the Apple App Store as{' '}
+        <strong>&ldquo;Rooted Plant Identifier &amp; Care&rdquo;</strong>{' '}
+        (bundle <code>com.yantrava.rooted</code>). Rooted and the Rooted AS
+        developer account are operated by <strong>Manav Jain</strong>,
+        Bengaluru, India. You can contact us at{' '}
         <a href="/support">the support page</a> any time.
       </p>
 

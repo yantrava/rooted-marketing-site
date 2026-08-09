@@ -23,8 +23,12 @@ export default function TermsPage() {
 
       <p>
         These Terms of Service ("Terms") govern your use of the Rooted
-        mobile app and this website ("Rooted", "we", "us"). By creating an
-        account or using Rooted you agree to these Terms.
+        mobile app and this website ("Rooted", "we", "us"). The app is
+        published on Google Play as "Rooted Plant Identifier &amp; Care" by
+        the developer Rooted AS, and on the Apple App Store under the same
+        name; Rooted and the Rooted AS developer account are operated by
+        Manav Jain, Bengaluru, India. By creating an account or using Rooted
+        you agree to these Terms.
       </p>
 
       <h2>1. Your account</h2>
