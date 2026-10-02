@@ -73,6 +73,9 @@ const securityHeaders = [
 ];
 
 module.exports = {
+  // next 16.3+: when `next dev` detects an AI coding agent it writes AGENTS.md and a
+  // CLAUDE.md into this directory. Ours are hand-maintained, so opt out.
+  agentRules: false,
   // NOTE: previously tried pinning `turbopack.root` here to silence the
   // "multiple lockfiles" warning, but it broke PostCSS's Tailwind
   // resolution in dev. Leaving unset — the warning is cosmetic; killing
