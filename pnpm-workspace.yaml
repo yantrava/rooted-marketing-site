@@ -1,0 +1,16 @@
+# Dependency cooldown (pnpm 10.16.1+): resolve only versions published at least 7 days ago.
+# The value is in minutes: 7 x 24 x 60 = 10080. It applies where pnpm resolves new versions
+# (`pnpm add`, `pnpm update`); `pnpm install --frozen-lockfile` installs the lockfile as written.
+# pnpm 9 ignores the key. pnpm 10.16.0 itself fails `pnpm add` with it, so use 10.16.1+.
+#
+# This lives here and not in .npmrc on purpose: pnpm 11+ reads the setting only from
+# pnpm-workspace.yaml, and the exclude list below is not honored from .npmrc (tested on 10.34.6).
+# `packages` is only here because pnpm 9 refuses a workspace file without it.
+packages:
+  - .
+minimumReleaseAge: 10080
+#
+# Urgent security bump: exempt just that package (an exact `<pkg>@<fixed-version>` entry needs
+# pnpm 10.19+), run `pnpm add <pkg>@<fixed-version>`, commit the lockfile, then remove the entry.
+# minimumReleaseAgeExclude:
+#   - <pkg>
