@@ -1,6 +1,7 @@
 'use client';
 
 import posthog from 'posthog-js';
+import { MotionConfig } from 'motion/react';
 import { PostHogProvider } from 'posthog-js/react';
 import { useEffect } from 'react';
 
@@ -44,4 +45,13 @@ export function PHProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
+}
+
+// Site-wide reduced-motion policy for every `motion` component. With
+// reducedMotion="user" and the OS Reduce Motion setting on, transform and
+// layout animations stop while opacity and colour still animate. Scroll-linked
+// values (useScroll / useTransform / useSpring) are outside what MotionConfig
+// controls; they need their own useReducedMotion() guard.
+export function MotionProvider({ children }: { children: React.ReactNode }) {
+  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
 }

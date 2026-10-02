@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react';
 import { Fraunces, Inter } from 'next/font/google';
 import { getURL } from '@/utils/helpers';
 import '@/styles/main.css';
-import { PHProvider } from './providers';
+import { MotionProvider, PHProvider } from './providers';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from '@/components/ui/toaster';
 import PostHogPageViewWrapper from '@/components/misc/PostHogPageViewWrapper';
@@ -147,19 +147,21 @@ export default async function RootLayout({ children }: PropsWithChildren) {
           disableTransitionOnChange
         >
           <PHProvider>
-            <PostHogPageViewWrapper />
-            <main
-              id="skip"
-              className="relative min-h-[calc(100dvh-4rem)] md:min-h-[calc(100dvh-5rem)]"
-            >
-              {/* Site-wide scroll-driven vine. Absolutely positioned
-                  inside <main> (which is now `relative`) so it scrolls
-                  with the document — drawn portion always lands inside
-                  the user's viewport instead of trailing above. */}
-              <RootedVine />
-              {children}
-            </main>
-            <Toaster />
+            <MotionProvider>
+              <PostHogPageViewWrapper />
+              <main
+                id="skip"
+                className="relative min-h-[calc(100dvh-4rem)] md:min-h-[calc(100dvh-5rem)]"
+              >
+                {/* Site-wide scroll-driven vine. Absolutely positioned
+                    inside <main> (which is now `relative`) so it scrolls
+                    with the document — drawn portion always lands inside
+                    the user's viewport instead of trailing above. */}
+                <RootedVine />
+                {children}
+              </main>
+              <Toaster />
+            </MotionProvider>
           </PHProvider>
         </ThemeProvider>
       </body>
