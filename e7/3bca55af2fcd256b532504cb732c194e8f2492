@@ -1,0 +1,21 @@
+app/layout.tsx
+  s_65cd796fd8b0b8::t_b7bab2ae7ac66f 6,150-164
+app/providers.tsx
+  s_65cd796fd8b0b8::t_7f3446ef3b34bd 4,49-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "e73bca55af2fcd256b532504cb732c194e8f2492",
+  "prompts": {},
+  "sessions": {
+    "s_65cd796fd8b0b8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f2b62da1-b81c-48ee-98ed-a8109b05c758",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "yss420 <yoursecretshare@gmail.com>"
+    }
+  }
+}
