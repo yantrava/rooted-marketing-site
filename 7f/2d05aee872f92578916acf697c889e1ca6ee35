@@ -1,0 +1,19 @@
+pnpm-workspace.yaml
+  s_f65b7cb60e23b4::t_c43b88a6e3b4e7 1,4-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "7f2d05aee872f92578916acf697c889e1ca6ee35",
+  "prompts": {},
+  "sessions": {
+    "s_f65b7cb60e23b4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_f65b7cb60e23b4",
+        "model": "unknown"
+      },
+      "human_author": "yss420 <yoursecretshare@gmail.com>"
+    }
+  }
+}
