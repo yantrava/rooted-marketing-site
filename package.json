@@ -4,7 +4,7 @@
   "private": true,
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=18.17"
+    "node": ">=20.9"
   },
   "scripts": {
     "dev": "next dev --turbopack",
