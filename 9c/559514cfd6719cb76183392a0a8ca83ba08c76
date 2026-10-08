@@ -1,0 +1,19 @@
+NOTICES.md
+  s_c6f5b9a8067b06::t_4d40ac2b641a61 1-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "9c559514cfd6719cb76183392a0a8ca83ba08c76",
+  "prompts": {},
+  "sessions": {
+    "s_c6f5b9a8067b06": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_c6f5b9a8067b06",
+        "model": "unknown"
+      },
+      "human_author": "yss420 <yoursecretshare@gmail.com>"
+    }
+  }
+}
